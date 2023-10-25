@@ -25,8 +25,6 @@ app.use('/api/v1/category', CategoryRoute)
 app.use('/api/v1/product',productRoute)
 
 //rest api
-app.get('/',(req,res)=>{
-    res.send('<h1>hello world</h1>')
-})
-const PORT = process.env.pORT || 3000
+
+const PORT = process.env.pORT || 5000
 app.listen(PORT,()=> console.log(`server running on ${process.env.DEV_MODE} on port ${PORT}`.bgCyan.white))
