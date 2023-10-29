@@ -90,3 +90,8 @@ letter-spacing: 3px;
   height: 70vh;
   flex-direction: column;
 }
+
+.product-link{
+  text-decoration: none;
+  color:black;
+}

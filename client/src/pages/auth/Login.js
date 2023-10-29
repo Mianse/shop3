@@ -40,8 +40,8 @@ const Login = () => {
   };
   return (
     <Layout title="Register - Ecommer App">
-      <div className="form-container ">
-        <form onSubmit={handleSubmit}>
+      <div className="form-container m w-50">
+        <form onSubmit={handleSubmit} className="pl-30">
           <h4 className="title">LOGIN FORM</h4>
 
           <div className="mb-3">
@@ -55,7 +55,7 @@ const Login = () => {
               required
             />
           </div>
-          <div className="mb-3">
+          <div className="mb-3 ">
             <input
               type="password"
               value={password}
@@ -67,10 +67,10 @@ const Login = () => {
             />
           </div>
           <div className="mb-3">
-          <button type="submit" className="btn btn-primary" onClick={(e)=>{navigate('/forgot password')}}>
+          <button type="submit" className="btn btn-primary ms-2" onClick={(e)=>{navigate('/forgot password')}}>
             forgot password
           </button>
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="btn btn-primary ms-2">
             LOGIN
           </button>
           </div>

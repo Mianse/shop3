@@ -22,6 +22,6 @@ router.get('/get-product/:slug',getSingleProductController,)
 router.get('/product-photo/:pid',getProductPhotoController)
 
 //delete product
-router.delete('/product/:pid',requiresignIn,isAdmin, deleteProductController)
+router.delete('/delete-product/:pid',requiresignIn,isAdmin, deleteProductController)
 
 export default router
