@@ -40,9 +40,10 @@ const Login = () => {
   };
   return (
     <Layout title="Register - Ecommer App">
-      <div className="form-container m w-50">
-        <form onSubmit={handleSubmit} className="pl-30">
-          <h4 className="title">LOGIN FORM</h4>
+      <div className="container w-50" >
+      <div className="form-container p-30 ">
+        <form onSubmit={handleSubmit} >
+          <h4 className="title">Login form</h4>
 
           <div className="mb-3">
             <input
@@ -71,12 +72,14 @@ const Login = () => {
             forgot password
           </button>
           <button type="submit" className="btn btn-primary ms-2">
-            LOGIN
+            Login
           </button>
           </div>
           
         </form>
       </div>
+      </div>
+      
     </Layout>
   );
 };

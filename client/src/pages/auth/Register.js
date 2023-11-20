@@ -39,9 +39,10 @@ const Register = () => {
 
   return (
     <Layout title="Register - Ecommer App">
-      <div className="form-container w-50">
-        <form onSubmit={handleSubmit}>
-          <h4 className="title">REGISTER FORM</h4>
+      <div className="container w-50">
+      <div className="form-container ">
+        <form onSubmit={handleSubmit} >
+          <h4 className="title mb-10 m">Register form</h4>
           <div className="mb-3">
             <input
               type="text"
@@ -110,10 +111,12 @@ const Register = () => {
             />
           </div>
           <button type="submit" className="btn btn-primary">
-            REGISTER
+            Register
           </button>
         </form>
       </div>
+      </div>
+     
     </Layout>
   );
 };

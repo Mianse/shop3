@@ -161,4 +161,40 @@ export const testController = (req, res) => {
     res.send({ error });
   }
 };
-  
+
+//updateProfile controller
+
+export const updateProfileController = async (req,res)=>{
+  try {
+    const {name,email,phone,password,address} = req.body
+    const user = await userModel.findById(req.user._id)
+    //check password
+    if(password && password.length < 6){
+      return res.json({error: "password must 6 characters and more"})
+    }
+    //hashed password
+    const hashedPassword = password ? await hashPassword(password) : undefined;
+    //updqte user details
+    const updatedUser = await userModel.findByIdAndUpdate(
+      req.user._id,
+      {
+      name: name || user.name,
+      password: hashedPassword || user.password,
+      phone: phone || user.phone,
+      address: address || user.address,
+    },
+    {new: true})
+    res.status(200).send({
+      success:true,
+      message:"user updated successfully",
+      updatedUser
+    })
+  } catch (error) {
+    console.log(error)
+    res.status(400).send({
+      success: false,
+      message: "error while updating",
+      error
+    })
+  }
+}

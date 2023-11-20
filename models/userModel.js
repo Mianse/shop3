@@ -21,7 +21,7 @@
         required: true,
     },
     address:{
-        type: String,
+        type: {},
         required: true,
     },
     answer:{

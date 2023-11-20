@@ -3,10 +3,10 @@ import { NavLink } from "react-router-dom"
 const UserMenu = () => {
   return (
     <>
-      <div class="list-group">
+      <div className="list-group">
  <h1>DashBoard</h1>
-  <NavLink to="/dashboard/user/profile" class="list-group-item list-group-item-action">Profile</NavLink>
-  <NavLink to="/dashboard/user/orders" class="list-group-item list-group-item-action">orders</NavLink>
+  <NavLink to="/dashboard/user/profile" className="list-group-item list-group-item-action">Profile</NavLink>
+  <NavLink to="/dashboard/user/orders" className="list-group-item list-group-item-action">orders</NavLink>
 </div>
     </>
   )

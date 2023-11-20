@@ -12,6 +12,7 @@
   font-size: 17px;
   line-height: 25px;
   text-transform: uppercase;
+  background: black;
 }
 
 .nav-link{
@@ -56,14 +57,14 @@ letter-spacing: 3px;
 
 /* foooter csss */
 .footer{
-  color:white;
+  color:black;
   padding: 25px;
-  background:mediumslateblue;
+  background:lightgray;
   
 }
 .footer a{
   text-decoration: none;
-  color: white;
+  color: black;
   padding: 10px;
 
 }
