@@ -24,7 +24,7 @@ const CartPage = () => {
       });
       return total.toLocaleString("en-US", {
         style: "currency",
-        currency: "USD",
+        currency: "KSH",
       });
     } catch (error) {
       console.log(error);
@@ -57,7 +57,11 @@ const CartPage = () => {
   }, [auth?.token]);
 
   //handle payments
-  const handlePayment = async () => {
+  const handlePayment = async (req,res) => {
+    if(!clientToken){
+      alert('Please log in moment  we process your request');
+      toast.error("please log in so as you cn pay")
+    }
     try {
       setLoading(true);
       const { nonce } = await instance.requestPaymentMethod();
@@ -70,6 +74,7 @@ const CartPage = () => {
       setCart([]);
       navigate("/dashboard/user/orders");
       toast.success("Payment Completed Successfully ");
+     
     } catch (error) {
       console.log(error);
       setLoading(false);
@@ -155,35 +160,36 @@ const CartPage = () => {
                       })
                     }
                   >
-                    Plase Login to checkout
+                    Please Login to checkout
                   </button>
                 )}
               </div>
             )}
             <div className="mt-2">
-              {!clientToken || !cart?.length ? (
-                ""
-              ) : (
+            {!clientToken || !cart?.length ? ("") : (
                 <>
-                  <DropIn
-                    options={{
-                      authorization: clientToken,
-                      paypal: {
-                        flow: "vault",
-                      },
-                    }}
-                    onInstance={(instance) => setInstance(instance)}
-                  />
-
+                <DropIn
+                  options={{
+                    authorization: clientToken,
+                    paypal: {
+                      flow: "vault",
+                    },
+                  }}
+                  onInstance={(instance) => setInstance(instance)}
+                />
+                {!auth?.user?._id ? toast.error("please login to continue"):(<>
                   <button
-                    className="btn btn-primary"
-                    onClick={handlePayment}
-                    disabled={loading || !instance || !auth?.user?.address}
-                  >
-                    {loading ? "Processing ...." : "Make Payment"}
-                  </button>
-                </>
-              )}
+                  className="btn btn-primary"
+                  onClick={handlePayment}
+                  abled={!loading|| instance|| auth?.user?.address}
+                >
+                  {loading ? "Processing ...." : "Make Payment"}
+                </button>
+                </>)}
+               
+              </>
+               )}
+              
             </div>
           </div>
         </div>
