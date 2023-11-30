@@ -25,6 +25,7 @@ import ProductDetails from './pages/ProductDetails.js';
 import Categories from './pages/Categories.js';
 import CategoryProduct from './pages/CategoryProduct.js';
 import CartPage from './pages/CartPage.js';
+import OrdersAdmin from './pages/Admin/OrdersAdmin.js';
 
 function App() {
   return (
@@ -51,6 +52,7 @@ function App() {
 
       <Route path="admin/users" element={<Users/>}/>
       <Route path="admin/products" element={<Products/>}/>
+      <Route path="admin/orders" element={<OrdersAdmin/>}/>
 
 </Route>
     <Route path="/register" element={<Register/>}/>  {/*Register page*/}
