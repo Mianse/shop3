@@ -1,6 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import './styles/AuthStyles.css'
+import './styles/cartStyles.css'
+import './styles/CategoryProductStyles.css'
+import './styles/HomePage.css'
+import './styles/ProductStylesDetails.css'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from 'react-router-dom'

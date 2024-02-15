@@ -17,6 +17,8 @@ const UpdateProduct = () => {
   const[description,setDescription] = useState("")
   const [price, setPrice] = useState("")
   const [quantity,setQuantity] =useState("")
+ // const [category, setCategory] = useState({ name: '' }); // Provide a default value with an empty string
+
   const [category,setCategory] = useState("")
   const[photo,setPhoto] = useState("")
   const [shipping,setShipping] =useState("")
